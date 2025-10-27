@@ -1,0 +1,1039 @@
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column; 
+} 
+
+ main { 
+  flex: 1;  /* el contenido ocupa el espacio disponible */ 
+} 
+
+/* === Estilos Generales === */ 
+
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  background-color: #111; 
+  color: #fff; 
+} 
+
+ header { 
+  background: #000; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px; 
+} 
+
+ .logo { 
+  height: 60px; 
+} 
+
+ 
+
+.menu { 
+
+  list-style: none; 
+
+  display: flex; 
+
+  gap: 20px; 
+
+} 
+
+ 
+
+.menu li a { 
+
+  color: #C8FF03; 
+
+  text-decoration: none; 
+
+  font-weight: bold; 
+
+} 
+
+ 
+
+.menu li a.active, 
+
+.menu li a:hover { 
+
+  text-decoration: underline; 
+
+} 
+
+ 
+
+main { 
+
+  padding: 20px; 
+
+  text-align: center; 
+
+} 
+
+ 
+
+.hero { 
+
+  padding: 50px 20px; 
+
+  background: linear-gradient(180deg, #222, #111); 
+
+  border-radius: 10px; 
+
+} 
+
+ 
+
+h1, h2 { 
+
+  color: #C8FF03; 
+
+} 
+
+ 
+
+/* === Volcos === */ 
+
+.volcos-container { 
+
+  display: flex; 
+
+  justify-content: center; 
+
+  gap: 25px; 
+
+  flex-wrap: nowrap;     /* Siempre en fila horizontal */ 
+
+  overflow-x: auto;      /* Scroll horizontal si no caben */ 
+
+  padding: 10px; 
+
+} 
+
+ 
+
+.volco { 
+
+  background: #222; 
+
+  padding: 20px; 
+
+  border-radius: 12px; 
+
+  width: 260px;          /* ancho fijo para que todos sean iguales */ 
+
+  flex-shrink: 0;        /* evita que se achiquen */ 
+
+  transition: transform 0.3s, box-shadow 0.3s; 
+
+  text-align: center; 
+
+} 
+
+ 
+
+.volco:hover { 
+
+  transform: translateY(-5px); 
+
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4); 
+
+} 
+
+ 
+
+.volco img { 
+
+  width: 100%; 
+
+  height: 180px; 
+
+  object-fit: cover; 
+
+  border-radius: 8px; 
+
+} 
+
+ 
+
+.volco h3 { 
+
+  color: #C8FF03; /* verde neón */ 
+
+  margin: 15px 0 10px; 
+
+  font-size: 1.2rem; 
+
+} 
+
+ 
+
+.volco p { 
+
+  font-size: 0.9rem; 
+
+  color: #fff; /* blanco */ 
+
+} 
+
+ 
+
+/* === Título Tipos de Volco === */ 
+
+.tipos-volco h2 { 
+
+  color: #C8FF03; 
+
+  font-size: 2.5rem;   /* más grande */ 
+
+  margin-bottom: 30px; 
+
+  text-transform: uppercase; /* todo en mayúsculas */ 
+
+  letter-spacing: 2px; /* separación entre letras */ 
+
+} 
+
+/* === Formularios === */ 
+
+form { 
+
+  display: flex; 
+
+  flex-direction: column; 
+
+  gap: 10px; 
+
+  max-width: 400px; 
+
+  margin: auto; 
+
+} 
+
+ 
+
+input, select, textarea { 
+
+  padding: 10px; 
+
+  border: none; 
+
+  border-radius: 5px; 
+
+} 
+
+ 
+
+button { 
+
+  background: #C8FF03; 
+
+  border: none; 
+
+  padding: 10px; 
+
+  border-radius: 5px; 
+
+  font-weight: bold; 
+
+  cursor: pointer; 
+
+} 
+
+ 
+
+button:hover { 
+
+  background: #a6db00; 
+
+} 
+
+ 
+
+/* === Opiniones === */ 
+
+.rating { 
+
+  font-size: 2rem; 
+
+  cursor: pointer; 
+
+  color: #555; 
+
+} 
+
+ 
+
+.rating span.active { 
+
+  color: #C8FF03; 
+
+} 
+
+ 
+
+#opinionesLista { 
+
+  margin-top: 20px; 
+
+  text-align: left; 
+
+  max-width: 500px; 
+
+  margin-left: auto; 
+
+  margin-right: auto; 
+
+  background: #222; 
+
+  padding: 10px; 
+
+  border-radius: 10px; 
+
+} 
+
+/* === Logo + Texto del encabezado === */ 
+
+.logo-contenedor { 
+
+  display: flex; 
+
+  align-items: flex-start;  
+
+  gap: 15px; 
+
+} 
+
+ 
+
+.logo { 
+
+  height: 60px; /* altura fija del logo */ 
+
+} 
+
+ 
+
+.texto-logo { 
+
+  display: flex; 
+
+  flex-direction: column; 
+
+  justify-content: space-between; /* primera línea arriba, segunda abajo */ 
+
+  height: 60px; /* misma altura que el logo */ 
+
+} 
+
+ 
+
+.texto-logo .slogan { 
+
+  color: #fff; 
+
+  font-size: 14px; 
+
+  font-weight: bold; 
+
+  letter-spacing: 2px; 
+
+  text-transform: uppercase; 
+
+} 
+
+ 
+
+.texto-logo .nombre { 
+
+  color: #C8FF03; 
+
+  font-size: 20px; 
+
+  font-weight: 900; 
+
+  letter-spacing: 1px; 
+
+  text-transform: uppercase; 
+
+} 
+
+/* === Título principal del index === */ 
+
+.titulo-principal { 
+
+  font-size: 2.5rem;  /* mismo tamaño que TIPOS DE VOLCO */ 
+
+  color: #C8FF03; 
+
+  text-transform: uppercase; 
+
+  margin-bottom: 20px; 
+
+} 
+
+ 
+
+/* === Descripción debajo del título === */ 
+
+.descripcion { 
+
+  font-size: 1.1rem; 
+
+  line-height: 1.6; 
+
+  color: #fff;   /* blanco */ 
+
+  margin: 0 auto 30px auto; 
+
+  max-width: 800px; 
+
+  text-align: center; 
+
+} 
+
+ 
+
+/* === Logo centrado debajo del texto === */ 
+
+.logo-centro img { 
+
+  display: block; 
+
+  margin: 0 auto; 
+
+  max-width: 300px; 
+
+} 
+
+ 
+
+/* === Footer === */ 
+
+.footer { 
+
+  background: #000; 
+
+  color: #fff; 
+
+  padding: 10px 20px; 
+
+  display: flex; 
+
+  justify-content: space-between;  /* separa izq. y der. */ 
+
+  align-items: flex-end;           /* alineados abajo */ 
+
+  position: relative; 
+
+  bottom: 0; 
+
+  left: 0; 
+
+  width: 100%; 
+
+} 
+
+ 
+
+.footer-left { 
+
+  color: #C8FF03; 
+
+  font-weight: bold; 
+
+  text-align: left; 
+
+} 
+
+ 
+
+.footer-right { 
+
+  color: #aaa; 
+
+  text-align: right; 
+
+  margin-left: auto;  /* fuerza el texto a la derecha */ 
+
+} 
+
+ 
+
+/* === Formulario de contacto === */ 
+
+.mensaje-contenedor { 
+
+  background: #222; 
+
+  padding: 20px; 
+
+  border-radius: 12px; 
+
+  margin: 30px auto; 
+
+  max-width: 500px; 
+
+  text-align: center; 
+
+} 
+
+ 
+
+.mensaje-contenedor h3 { 
+
+  color: #C8FF03; 
+
+  margin-bottom: 15px; 
+
+} 
+
+ 
+
+.mensaje-contenedor input, 
+
+.mensaje-contenedor textarea { 
+
+  width: 100%; 
+
+  padding: 10px; 
+
+  margin-bottom: 15px; 
+
+  border: none; 
+
+  border-radius: 6px; 
+
+  font-size: 1rem; 
+
+} 
+
+ 
+
+.mensaje-contenedor textarea { 
+
+  height: 120px; 
+
+  resize: none; 
+
+} 
+
+ 
+
+.mensaje-contenedor button { 
+
+  background: #C8FF03;   /* verde neón */ 
+
+  color: #000;           /* texto negro */ 
+
+  border: none; 
+
+  padding: 12px 20px; 
+
+  border-radius: 6px; 
+
+  font-weight: bold; 
+
+  font-size: 1rem; 
+
+  cursor: pointer; 
+
+  transition: background 0.3s; 
+
+} 
+
+ 
+
+.mensaje-contenedor button:hover { 
+
+  background: #a6db00;   /* verde un poco más oscuro */ 
+
+} 
+
+/* === Opiniones === */ 
+
+.rating { 
+
+  font-size: 2rem; 
+
+  color: #ccc; 
+
+  cursor: pointer; 
+
+  display: inline-block; 
+
+  margin-bottom: 15px; 
+
+} 
+
+ 
+
+.rating span { 
+
+  margin: 0 3px; 
+
+  transition: color 0.3s; 
+
+} 
+
+ 
+
+.rating span:hover, 
+
+.rating span.selected, 
+
+.rating span.hover { 
+
+  color: #FFD700; /* Amarillo dorado */ 
+
+} 
+
+ 
+
+#comentario { 
+
+  width: 100%; 
+
+  max-width: 500px; 
+
+  padding: 10px; 
+
+  border-radius: 6px; 
+
+  border: 1px solid #ccc; 
+
+  margin-bottom: 15px; 
+
+  font-size: 1rem; 
+
+} 
+
+ 
+
+#enviarOpinion { 
+
+  background: #C8FF03; 
+
+  color: #000; 
+
+  border: none; 
+
+  padding: 10px 20px; 
+
+  font-weight: bold; 
+
+  border-radius: 6px; 
+
+  cursor: pointer; 
+
+  transition: background 0.3s; 
+
+} 
+
+ 
+
+#enviarOpinion:hover { 
+
+  background: #a6db00; 
+
+} 
+
+ 
+
+#opinionesLista { 
+
+  margin-top: 20px; 
+
+  max-width: 500px; 
+
+  text-align: left; 
+
+} 
+
+ 
+
+.opinion { 
+
+  background: #f9f9f9; 
+
+  padding: 10px; 
+
+  margin-bottom: 10px; 
+
+  border-radius: 6px; 
+
+  border-left: 5px solid #C8FF03; 
+
+} 
+
+#rating span { 
+
+  font-size: 2rem; 
+
+  cursor: pointer; 
+
+  color: #555;       /* gris cuando no está seleccionada */ 
+
+  transition: color 0.3s; 
+
+} 
+
+ 
+
+#rating span.hover { 
+
+  color: #C8FF03;    /* verde neón al pasar el mouse */ 
+
+} 
+
+ 
+
+#rating span.active { 
+
+  color: #FFD700;    /* dorado cuando está seleccionada */ 
+
+} 
+
+/* === Opiniones mejoradas === */ 
+
+#rating { 
+
+  margin: 20px 0; 
+
+} 
+
+ 
+
+#comentario { 
+
+  width: 100%; 
+
+  max-width: 500px; 
+
+  display: block; 
+
+  margin: 0 auto 15px auto; 
+
+  padding: 12px; 
+
+  border-radius: 6px; 
+
+  border: none; 
+
+  font-size: 1rem; 
+
+} 
+
+ 
+
+#enviarOpinion { 
+
+  display: block; 
+
+  width: 100%; 
+
+  max-width: 500px; 
+
+  margin: 0 auto; 
+
+  background: #C8FF03; 
+
+  color: #000; 
+
+  border: none; 
+
+  padding: 12px; 
+
+  border-radius: 6px; 
+
+  font-weight: bold; 
+
+  font-size: 1rem; 
+
+  cursor: pointer; 
+
+  transition: background 0.3s; 
+
+} 
+
+ 
+
+#enviarOpinion:hover { 
+
+  background: #a6db00; 
+
+} 
+
+ 
+
+/* Estilo de cada opinión */ 
+
+.opinion-box { 
+
+  background: #222; 
+
+  border: 2px solid #C8FF03; 
+
+  border-radius: 10px; 
+
+  padding: 15px; 
+
+  margin: 15px auto; 
+
+  max-width: 500px; 
+
+  text-align: left; 
+
+  color: #fff; 
+
+} 
+
+/* Distribución general de dos columnas para la página de inicio */ 
+
+.contenedor-balanceado { 
+
+  display: flex; 
+
+  justify-content: space-between; 
+
+  align-items: flex-start; 
+
+  gap: 30px; 
+
+  padding: 20px; 
+
+} 
+
+ 
+
+/* Columna izquierda ocupa mayor espacio */ 
+
+.hero-columna { 
+
+  flex: 2.5; 
+
+} 
+
+ 
+
+/* Columna derecha para login */ 
+
+.login-contenedor { 
+
+  flex: 1; 
+
+  background: #f4f4f4; 
+
+  padding: 20px; 
+
+  border-radius: 10px; 
+
+  text-align: center; 
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+
+} 
+
+ 
+
+/* Estilos del formulario de login */ 
+
+.form-login { 
+
+  display: flex; 
+
+  flex-direction: column; 
+
+  gap: 10px; 
+
+  margin-top: 15px; 
+
+} 
+
+ 
+
+.form-login label { 
+
+  text-align: left; 
+
+  font-weight: bold; 
+
+} 
+
+ 
+
+.form-login input { 
+
+  padding: 8px; 
+
+  border: 1px solid #999; 
+
+  border-radius: 6px; 
+
+} 
+
+ 
+
+.btn-login { 
+
+  cursor: pointer; 
+
+  border: none; 
+
+  border-radius: 6px; 
+
+  padding: 10px; 
+
+  font-weight: bold; 
+
+  transition: 0.3s; 
+
+} 
+
+ 
+
+.btn-login:hover { 
+
+  opacity: 0.8; 
+
+} 
+
+ 
+
+.texto-registro { 
+
+  margin-top: 15px; 
+
+} 
+
+ 
+
+/* Adaptación a pantallas móviles */ 
+
+@media (max-width: 768px) { 
+
+  .contenedor-balanceado { 
+
+    flex-direction: column; 
+
+  } 
+
+  .login-contenedor { 
+
+    width: 100 percent; 
+
+  } 
+
+} 
+
+/* Columna derecha para login */ 
+
+.login-contenedor { 
+
+  flex: 1; 
+
+  background: #222; /* Fondo oscuro para mantener la estética */ 
+
+  padding: 20px; 
+
+  border-radius: 10px; 
+
+  text-align: center; 
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.4); 
+
+  color: #fff; 
+
+} 
+
+ 
+
+/* Títulos del login */ 
+
+.login-contenedor h3 { 
+
+  color: #C8FF03; 
+
+  font-size: 1.4rem; 
+
+  margin-bottom: 15px; 
+
+} 
+
+ 
+
+/* Campos del formulario */ 
+
+.form-login input { 
+
+  background: #111; 
+
+  color: white; 
+
+  border: 2px solid #C8FF03; 
+
+  padding: 10px; 
+
+  border-radius: 6px; 
+
+} 
+
+ 
+
+/* Botón acorde a tu diseño */ 
+
+.btn-login { 
+
+  background: #C8FF03; 
+
+  color: #000; 
+
+  padding: 10px; 
+
+  border-radius: 6px; 
+
+  font-weight: bold; 
+
+  cursor: pointer; 
+
+  border: none; 
+
+  text-transform: uppercase; 
+
+} 
+
+ 
+
+.btn-login:hover { 
+
+  background: #a6db00; 
+
+} 
+
+ 
+
+/* Texto inferior */ 
+
+.texto-registro a { 
+
+  color: #C8FF03; 
+
+  font-weight: bold; 
+
+  text-decoration: none; 
+
+} 
+
+ 
+
+.texto-registro a:hover { 
+
+  text-decoration: underline; 
+
+} 
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | Taller Robledo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-contenedor">
+      <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
+      <div class="texto-logo">
+        <span class="slogan">FABRICACIÓN DE VOLCOS</span>
+        <span class="nombre">TALLER ROBLEDO</span>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="volcos.html">Volcos</a></li>
+        <li><a href="cotizacion.html">Cotización</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="opiniones.html">Opiniones</a></li>
+        <li><a href="registro.html" class="active">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="auth-section">
+    <div class="auth-container">
+      <h2>Registro de Usuario</h2>
+
+      <form action="#" method="POST" class="form-registro">
+
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="•••••••" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 10 #15-23" required>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" required>
+
+        <button type="submit" class="btn-primary">Registrar cuenta</button>
+      </form>
+
+      <p class="auth-link">
+        ¿Ya tienes una cuenta? <a href="index.html">Inicia sesión aquí</a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <p>Taller Robledo | 📞 314 880 5733</p>
+    </div>
+    <div class="footer-right">
+      <p>© 2025 Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Robledo - Cotización</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo-contenedor">
+  <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
+  <div class="texto-logo">
+    <span class="slogan">FABRICACIÓN DE VOLCOS</span>
+    <span class="nombre">TALLER ROBLEDO</span>
+  </div>
+   </div>
+    <nav>
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="volcos.html">Volcos</a></li>
+    <li><a href="cotizacion.html">Cotización</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="opiniones.html">Opiniones</a></li>
+    <li><a href="registro.html">Registro</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <h1>Solicitar Cotización</h1>
+    <form id="cotizacionForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="email">Correo:</label>
+      <input type="email" id="email" required>
+
+      <label for="volco">Tipo de Volco:</label>
+      <select id="volco" required>
+        <option value="">Seleccione...</option>
+        <option value="bañera">Bañera</option>
+        <option value="inter">Inter</option>
+        <option value="ocho cuadros">Ocho Cuadros</option>
+      </select>
+
+      <label for="mensaje">Detalles:</label>
+      <textarea id="mensaje" rows="4"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+  <div class="footer-left">
+    <p>Taller Robledo | 📞 314 880 5733</p>
+  </div>
+  <div class="footer-right">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
