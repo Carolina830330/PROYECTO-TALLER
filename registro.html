@@ -33,17 +33,15 @@
     <div class="auth-container">
       <h2>Registro de Usuario</h2>
 
-      <!-- FORMULARIO CON ACTION AL SERVLET -->
-      <form action="RegistrarUsuarioServlet" method="POST" class="form-registro">
-
+      <form id="formRegistro" class="form-registro">
         <label for="nombre">Nombre completo:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" placeholder="•••••••" required>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" placeholder="•••••••" required>
 
         <label for="direccion">Dirección:</label>
         <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 10 #15-23" required>
@@ -55,12 +53,14 @@
         <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" required>
 
         <button type="submit" class="btn-primary">Registrar cuenta</button>
+
+        <!-- Contenedor de mensajes -->
+        <div id="mensaje" style="margin-top:10px; font-weight:bold;"></div>
       </form>
 
       <p class="auth-link">
         ¿Ya tienes una cuenta? <a href="index.html">Inicia sesión aquí</a>
       </p>
-
     </div>
   </main>
 
@@ -72,5 +72,70 @@
       <p>© 2025 Todos los derechos reservados</p>
     </div>
   </footer>
+
+  <!-- SCRIPT COMPLETO PARA FUNCIONAMIENTO -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("formRegistro");
+      const mensajeDiv = document.getElementById("mensaje");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // 🔹 Confirmar que el submit se disparó
+        console.log("Submit detectado");
+
+        mensajeDiv.textContent = "";
+        mensajeDiv.style.color = "red";
+
+        // Recoger datos del formulario
+        const datos = {
+          nombre: document.getElementById("nombre").value.trim(),
+          correo: document.getElementById("correo").value.trim(),
+          contraseña: document.getElementById("contraseña").value.trim(),
+          direccion: document.getElementById("direccion").value.trim(),
+          ciudad: document.getElementById("ciudad").value.trim(),
+          telefono: document.getElementById("telefono").value.trim()
+        };
+
+        // Validación rápida de campos vacíos
+        for (const key in datos) {
+          if (!datos[key]) {
+            mensajeDiv.textContent = "Todos los campos son obligatorios.";
+            return;
+          }
+        }
+
+        try {
+          // 🔹 Enviar datos al backend
+          const respuesta = await fetch("http://localhost:3000/registro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datos)
+          });
+
+          const resultado = await respuesta.json();
+
+          // Mostrar mensaje según respuesta del backend
+          if (resultado.success) {
+            mensajeDiv.style.color = "green";
+            mensajeDiv.textContent = resultado.message;
+            form.reset();
+          } else {
+            mensajeDiv.style.color = "red";
+            mensajeDiv.textContent = resultado.message;
+          }
+
+          console.log("Respuesta del backend:", resultado);
+
+        } catch (error) {
+          mensajeDiv.style.color = "red";
+          mensajeDiv.textContent = "Error conectando con el servidor.";
+          console.error("Error fetch:", error);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
