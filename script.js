@@ -1,67 +1,68 @@
-// === Validación de formulario de cotización ===
-const cotizacionForm = document.getElementById("cotizacionForm");
-if (cotizacionForm) {
-  cotizacionForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("¡Gracias! Su solicitud de cotización ha sido enviada.");
-    cotizacionForm.reset();
-  });
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const formLogin = document.getElementById("formLogin");
+  const mensajeBienvenida = document.getElementById("mensajeBienvenida");
+  const btnLogout = document.getElementById("btnLogout");
 
-// === Sistema de calificación ===
-const rating = document.getElementById("rating");
-const enviarOpinion = document.getElementById("enviarOpinion");
-const opinionesLista = document.getElementById("opinionesLista");
-
-if (rating) {
-  rating.innerHTML = "";
-  for (let i = 1; i <= 5; i++) {
-    const star = document.createElement("span");
-    star.textContent = "★";
-    star.dataset.value = i;
-    star.style.fontSize = "3rem"; // ⭐ Estrellas más grandes
-    star.addEventListener("click", function () {
-      document.querySelectorAll("#rating span").forEach(s => s.classList.remove("active"));
-      for (let j = 0; j < i; j++) {
-        document.querySelectorAll("#rating span")[j].classList.add("active");
-      }
-      rating.dataset.selected = i;
-    });
-    rating.appendChild(star);
+  // Verificar si ya hay una sesión activa al cargar la página
+  const usuarioGuardado = sessionStorage.getItem("usuario");
+  if (usuarioGuardado && formLogin) {
+    const usuario = JSON.parse(usuarioGuardado);
+    mensajeBienvenida.textContent = `¡Bienvenido, ${usuario.nombre}!`;
+    mensajeBienvenida.style.display = "block";
+    btnLogout.style.display = "inline-block";
+    formLogin.style.display = "none";
   }
-}
 
-if (enviarOpinion) {
-  enviarOpinion.addEventListener("click", function () {
-    const comentario = document.getElementById("comentario").value;
-    const estrellas = rating.dataset.selected || 0;
+  // Manejar el submit del login
+  if (formLogin) {
+    formLogin.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    if (estrellas == 0) {
-      alert("Por favor selecciona una calificación con estrellas.");
-      return;
-    }
-    if (!comentario) {
-      alert("Por favor escribe un comentario.");
-      return;
-    }
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
-    // Crear el contenedor de la opinión
-    const opinionBox = document.createElement("div");
-    opinionBox.classList.add("opinion-box");
+      try {
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
 
-    // Mostrar estrellas seleccionadas
-    const estrellasTexto = "⭐".repeat(estrellas);
+        const data = await response.json();
 
-    opinionBox.innerHTML = `
-      <p><strong>${estrellasTexto}</strong></p>
-      <p>${comentario}</p>
-    `;
+        if (data.success) {
+          // Guardar usuario en sessionStorage
+          sessionStorage.setItem("usuario", JSON.stringify(data.usuario));
+          
+          // Mostrar mensaje de bienvenida y botón de logout
+          mensajeBienvenida.textContent = `¡Bienvenido, ${data.usuario.nombre}!`;
+          mensajeBienvenida.style.display = "block";
+          btnLogout.style.display = "inline-block";
 
-    opinionesLista.appendChild(opinionBox);
+          // Ocultar formulario de login
+          formLogin.style.display = "none";
 
-    // Resetear campos
-    document.getElementById("comentario").value = "";
-    rating.dataset.selected = 0;
-    document.querySelectorAll("#rating span").forEach(s => s.classList.remove("active"));
-  });
-}
+          // Mostrar mensaje de éxito
+          alert("✅ Inicio de sesión exitoso");
+
+        } else {
+          alert(data.message || "Usuario o contraseña incorrectos");
+        }
+
+      } catch (error) {
+        console.error("Error al conectar con el servidor:", error);
+        alert("Error de conexión con el servidor");
+      }
+    });
+  }
+
+  // Manejar logout - RECARGA LA PÁGINA
+  if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+      // Eliminar la sesión
+      sessionStorage.removeItem("usuario");
+      // Recargar la página completamente
+      window.location.reload();
+    });
+  }
+});

@@ -7,52 +7,65 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo-contenedor">
-      <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
-      <div class="texto-logo">
-        <span class="slogan">FABRICACIÓN DE VOLCOS</span>
-        <span class="nombre">TALLER ROBLEDO</span>
-      </div>
-    </div>
-   <nav>
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="volcos.html">Volcos</a></li>
-    <li><a href="cotizacion.html">Cotización</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-    <li><a href="opiniones.html">Opiniones</a></li>
-    <li><a href="registro.html">Registro</a></li>
-  </ul>
-</nav>
-  </header>
 
-  <main>
-    <h1>Contáctenos</h1>
-    <p><strong>Teléfono:</strong> 3148805733</p>
-    <p><strong>Dirección:</strong> Carrera 3 Norte # 55 - 04, Barrio Alcázares</p>
-    <p><strong>Ciudad:</strong> Cartago, Valle</p>
-    <p><strong>Email:</strong> jesushernandocardona@hotmail.com</p>
+<header>
+  <div class="logo-contenedor">
+    <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
+    <div class="texto-logo">
+      <span class="slogan">FABRICACIÓN DE VOLCOS</span>
+      <span class="nombre">TALLER ROBLEDO</span>
+    </div>
+  </div>
 
-    <!-- Formulario de contacto -->
-    <div class="mensaje-contenedor">
-      <h3>Envíanos un mensaje</h3>
-      <form>
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo" required>
-        <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
-        <button type="submit">ENVIAR</button>
-      </form>
-    </div>
-  </main>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="volcos.html">Volcos</a></li>
+      <li><a href="cotizacion.html">Cotización</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="opiniones.html">Opiniones</a></li>
+      <li><a href="registro.html">Registro</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <footer class="footer">
-    <div class="footer-left">
-      <p>Taller Robledo | 📞 314 880 5733</p>
-    </div>
-    <div class="footer-right">
-      <p>&copy; 2025 Todos los derechos reservados</p>
-    </div>
-  </footer>
+<main>
+  <h1>Contáctenos</h1>
+
+  <p><strong>Teléfono:</strong> 314 880 5733</p>
+  <p><strong>Dirección:</strong> Carrera 3 Norte # 55 - 04, Barrio Alcázares</p>
+  <p><strong>Ciudad:</strong> Cartago, Valle</p>
+  <p><strong>Email:</strong> jesushernandocardona@hotmail.com</p>
+
+  <!-- ✅ BOTÓN DE WHATSAPP -->
+<a href="https://wa.me/573148805733" class="whatsapp-btn" target="_blank">
+  <img src="whatsapplogo.jpg" alt="WhatsApp">
+  Chatea con nosotros
+</a>
+  <!-- ✅ FORMULARIO QUE ENVÍA AL CORREO -->
+  <div class="mensaje-contenedor">
+    <h3>Envíanos un mensaje</h3>
+
+    <form action="https://formsubmit.co/jesushernandocardona@hotmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+      <button type="submit">ENVIAR</button>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-left">
+    <p>Taller Robledo | 📞 314 880 5733</p>
+  </div>
+  <div class="footer-right">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+</footer>
+
 </body>
 </html>

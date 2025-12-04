@@ -5,60 +5,314 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taller Robledo - Cotización</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos adicionales para el mensaje bonito */
+    .mensaje-acceso {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    
+    .tarjeta-acceso {
+      max-width: 500px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #fff9e6 0%, #ffeaa7 100%);
+      border: 2px solid #fdcb6e;
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 25px rgba(252, 211, 77, 0.3);
+    }
+    
+    .icono-bloqueo {
+      font-size: 70px;
+      color: #e67e22;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .titulo-acceso {
+      color: #d35400;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+    
+    .texto-acceso {
+      font-size: 18px;
+      color: #5d4037;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    .subtitulo-acceso {
+      font-size: 16px;
+      color: #795548;
+      margin-bottom: 30px;
+    }
+    
+    .botones-acceso {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-login {
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+    
+    .btn-registro {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    }
+    
+    .btn-login:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    }
+    
+    .btn-registro:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+    }
+    
+    .nota-acceso {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #8d6e63;
+      font-style: italic;
+    }
+    
+    /* Estilos para usuarios logueados */
+    .info-usuario {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 5px solid #2ecc71;
+      box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1);
+    }
+    
+    .mensaje-exito {
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      color: #155724;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+      border-left: 5px solid #28a745;
+      display: none;
+    }
+    
+    .btn-enviar {
+      background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    }
+    
+    .btn-enviar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo-contenedor">
-  <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
-  <div class="texto-logo">
-    <span class="slogan">FABRICACIÓN DE VOLCOS</span>
-    <span class="nombre">TALLER ROBLEDO</span>
-  </div>
-   </div>
+      <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
+      <div class="texto-logo">
+        <span class="slogan">FABRICACIÓN DE VOLCOS</span>
+        <span class="nombre">TALLER ROBLEDO</span>
+      </div>
+    </div>
     <nav>
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="volcos.html">Volcos</a></li>
-    <li><a href="cotizacion.html">Cotización</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-    <li><a href="opiniones.html">Opiniones</a></li>
-    <li><a href="registro.html">Registro</a></li>
-  </ul>
-</nav>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="volcos.html">Volcos</a></li>
+        <li><a href="cotizacion.html" class="active">Cotización</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="opiniones.html">Opiniones</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <h1>Solicitar Cotización</h1>
-    <form id="cotizacionForm">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" required>
+    <!-- MENSAJE PARA USUARIOS NO LOGUEADOS -->
+    <div id="mensajeNoLogueado" class="mensaje-acceso" style="display: none;">
+      <div class="tarjeta-acceso">
+        <div class="icono-bloqueo">🔒</div>
+        <h2 class="titulo-acceso">Acceso a Cotizaciones</h2>
+        
+        <p class="texto-acceso">
+          Para solicitar una cotización personalizada de volcos, necesitas tener una cuenta en nuestro sistema.
+        </p>
+        
+        <p class="subtitulo-acceso">
+          Esto nos permite ofrecerte un servicio más personalizado, guardar tu historial de cotizaciones y brindarte un mejor seguimiento.
+        </p>
+        
+        <div class="botones-acceso">
+          <a href="index.html" class="btn-login">
+            Iniciar Sesión
+          </a>
+          <a href="registro.html" class="btn-registro">
+            Crear Cuenta
+          </a>
+        </div>
+        
+        <p class="nota-acceso">
+          Si ya tienes cuenta, inicia sesión con tu correo y contraseña.
+        </p>
+      </div>
+    </div>
 
-      <label for="email">Correo:</label>
-      <input type="email" id="email" required>
+    <!-- CONTENIDO PARA USUARIOS LOGUEADOS -->
+    <div id="contenidoLogueado" style="display: none;">
+      <h1>Solicitar Cotización de Volcos</h1>
+      
+      <!-- Información del usuario -->
+      <div class="info-usuario">
+        <p style="margin: 0; font-size: 17px;">
+          👋 ¡Hola <strong><span id="nombreUsuario"></span></strong>! 
+          Estamos listos para preparar tu cotización personalizada.
+        </p>
+      </div>
+      
+      <!-- Formulario de cotización -->
+      <form id="cotizacionForm">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" required placeholder="Tu nombre completo">
 
-      <label for="volco">Tipo de Volco:</label>
-      <select id="volco" required>
-        <option value="">Seleccione...</option>
-        <option value="bañera">Bañera</option>
-        <option value="inter">Inter</option>
-        <option value="ocho cuadros">Ocho Cuadros</option>
-      </select>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" required placeholder="ejemplo@correo.com">
 
-      <label for="mensaje">Detalles:</label>
-      <textarea id="mensaje" rows="4"></textarea>
+        <label for="telefono">Teléfono de contacto:</label>
+        <input type="tel" id="telefono" placeholder="Ej: 3001234567">
 
-      <button type="submit">Enviar</button>
-    </form>
+        <label for="volco">Tipo de Volco:</label>
+        <select id="volco" required>
+          <option value="">Seleccione el tipo de volco...</option>
+          <option value="bañera">Bañera</option>
+          <option value="inter">Volco Inter</option>
+          <option value="ocho_cuadros">Ocho Cuadros</option>
+          <option value="especial">Diseño Especial</option>
+        </select>
+
+        <label for="medidas">Medidas (ancho x largo x alto en metros):</label>
+        <input type="text" id="medidas" placeholder="Ej: 2.20 x 6.00 x 0.80">
+
+        <label for="material">Material preferido:</label>
+        <select id="material">
+          <option value="">Seleccione material...</option>
+          <option value="acero_14">Acero Calibre 14</option>
+          <option value="acero_16">Acero Calibre 16</option>
+          <option value="acero_18">Acero Calibre 18</option>
+          <option value="otro">Otro (especificar en detalles)</option>
+        </select>
+
+        <label for="mensaje">Detalles adicionales:</label>
+        <textarea id="mensaje" rows="5" placeholder="Describe características especiales, color, tipo de vehículo, fecha requerida, etc..."></textarea>
+
+        <button type="submit" class="btn-enviar">
+          📋 Solicitar Cotización
+        </button>
+      </form>
+      
+      <!-- Mensaje de éxito -->
+      <div id="mensajeExito" class="mensaje-exito">
+        <p style="margin: 0; font-size: 17px;">
+          ✅ <strong>¡Cotización enviada exitosamente!</strong> 
+          <br>Hemos recibido tu solicitud. Uno de nuestros asesores se contactará contigo en las próximas 24 horas para brindarte la cotización detallada.
+        </p>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
-  <div class="footer-left">
-    <p>Taller Robledo | 📞 314 880 5733</p>
-  </div>
-  <div class="footer-right">
-    <p>&copy; 2025 Todos los derechos reservados</p>
-  </div>
-</footer>
+    <div class="footer-left">
+      <p>Taller Robledo | 📞 314 880 5733</p>
+    </div>
+    <div class="footer-right">
+      <p>&copy; 2025 Todos los derechos reservados</p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="verificarSesion.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Script específico para cotización
+    document.addEventListener("DOMContentLoaded", function() {
+      // Manejar envío del formulario
+      const form = document.getElementById('cotizacionForm');
+      const mensajeExito = document.getElementById('mensajeExito');
+      
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Validar que todos los campos requeridos estén llenos
+          const volco = document.getElementById('volco').value;
+          const nombre = document.getElementById('nombre').value;
+          const email = document.getElementById('email').value;
+          
+          if (!volco || !nombre || !email) {
+            alert('Por favor completa los campos requeridos (Nombre, Correo y Tipo de Volco)');
+            return;
+          }
+          
+          // Aquí iría el código para enviar la cotización al servidor
+          // Por ahora solo mostramos mensaje de éxito
+          
+          // Mostrar mensaje de éxito
+          if (mensajeExito) {
+            mensajeExito.style.display = 'block';
+          }
+          
+          // Ocultar formulario
+          form.style.display = 'none';
+          
+          // Hacer scroll al mensaje de éxito
+          mensajeExito.scrollIntoView({ behavior: 'smooth' });
+          
+          // Mostrar datos en consola (para depuración)
+          console.log('📋 Cotización enviada:', {
+            nombre: nombre,
+            email: email,
+            telefono: document.getElementById('telefono').value,
+            volco: volco,
+            medidas: document.getElementById('medidas').value,
+            material: document.getElementById('material').value,
+            mensaje: document.getElementById('mensaje').value,
+            fecha: new Date().toLocaleString()
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

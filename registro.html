@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,134 +9,75 @@
 </head>
 
 <body>
-  <header>
-    <div class="logo-contenedor">
-      <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
-      <div class="texto-logo">
-        <span class="slogan">FABRICACIÓN DE VOLCOS</span>
-        <span class="nombre">TALLER ROBLEDO</span>
-      </div>
+
+<header>
+  <div class="logo-contenedor">
+    <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
+    <div class="texto-logo">
+      <span class="slogan">FABRICACIÓN DE VOLCOS</span>
+      <span class="nombre">TALLER ROBLEDO</span>
     </div>
+  </div>
 
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="volcos.html">Volcos</a></li>
-        <li><a href="cotizacion.html">Cotización</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="opiniones.html">Opiniones</a></li>
-        <li><a href="registro.html" class="active">Registro</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="volcos.html">Volcos</a></li>
+      <li><a href="cotizacion.html">Cotización</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="opiniones.html">Opiniones</a></li>
+      <li><a href="registro.html" class="active">Registro</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="auth-section">
-    <div class="auth-container">
-      <h2>Registro de Usuario</h2>
+<main class="auth-section">
 
-      <form id="formRegistro" class="form-registro">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+  <div class="auth-container">
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+    <h2>Registro de Usuario</h2>
 
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" placeholder="•••••••" required>
+    <form id="formRegistro" class="form-registro">
 
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 10 #15-23" required>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
 
-        <label for="ciudad">Ciudad:</label>
-        <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" required>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" placeholder="•••••••" required>
 
-        <button type="submit" class="btn-primary">Registrar cuenta</button>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 10 #15-23" required>
 
-        <!-- Contenedor de mensajes -->
-        <div id="mensaje" style="margin-top:10px; font-weight:bold;"></div>
-      </form>
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
 
-      <p class="auth-link">
-        ¿Ya tienes una cuenta? <a href="index.html">Inicia sesión aquí</a>
-      </p>
-    </div>
-  </main>
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" required>
 
-  <footer class="footer">
-    <div class="footer-left">
-      <p>Taller Robledo | 📞 314 880 5733</p>
-    </div>
-    <div class="footer-right">
-      <p>© 2025 Todos los derechos reservados</p>
-    </div>
-  </footer>
+      <button type="submit" class="btn-primary">Registrar cuenta</button>
 
-  <!-- SCRIPT COMPLETO PARA FUNCIONAMIENTO -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("formRegistro");
-      const mensajeDiv = document.getElementById("mensaje");
+    </form>
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    <p class="auth-link">
+      ¿Ya tienes una cuenta? <a href="index.html">Inicia sesión aquí</a>
+    </p>
 
-        // 🔹 Confirmar que el submit se disparó
-        console.log("Submit detectado");
+  </div>
 
-        mensajeDiv.textContent = "";
-        mensajeDiv.style.color = "red";
+</main>
 
-        // Recoger datos del formulario
-        const datos = {
-          nombre: document.getElementById("nombre").value.trim(),
-          correo: document.getElementById("correo").value.trim(),
-          contraseña: document.getElementById("contraseña").value.trim(),
-          direccion: document.getElementById("direccion").value.trim(),
-          ciudad: document.getElementById("ciudad").value.trim(),
-          telefono: document.getElementById("telefono").value.trim()
-        };
+<footer class="footer">
+  <div class="footer-left">
+    <p>Taller Robledo | 📞 314 880 5733</p>
+  </div>
+  <div class="footer-right">
+    <p>© 2025 Todos los derechos reservados</p>
+  </div>
+</footer>
 
-        // Validación rápida de campos vacíos
-        for (const key in datos) {
-          if (!datos[key]) {
-            mensajeDiv.textContent = "Todos los campos son obligatorios.";
-            return;
-          }
-        }
-
-        try {
-          // 🔹 Enviar datos al backend
-          const respuesta = await fetch("http://localhost:3000/registro", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(datos)
-          });
-
-          const resultado = await respuesta.json();
-
-          // Mostrar mensaje según respuesta del backend
-          if (resultado.success) {
-            mensajeDiv.style.color = "green";
-            mensajeDiv.textContent = resultado.message;
-            form.reset();
-          } else {
-            mensajeDiv.style.color = "red";
-            mensajeDiv.textContent = resultado.message;
-          }
-
-          console.log("Respuesta del backend:", resultado);
-
-        } catch (error) {
-          mensajeDiv.style.color = "red";
-          mensajeDiv.textContent = "Error conectando con el servidor.";
-          console.error("Error fetch:", error);
-        }
-      });
-    });
-  </script>
-
+<script src="registro.js"></script>
 </body>
 </html>

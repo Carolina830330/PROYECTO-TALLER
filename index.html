@@ -6,73 +6,90 @@
   <title>Taller Robledo - Inicio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo-contenedor">
-      <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
-      <div class="texto-logo">
-        <span class="slogan">FABRICACIÓN DE VOLCOS</span>
-        <span class="nombre">TALLER ROBLEDO</span>
-      </div>
+
+<header>
+  <div class="logo-contenedor">
+    <img src="Logotipo.jpg" alt="Logo Taller Robledo" class="logo">
+    <div class="texto-logo">
+      <span class="slogan">FABRICACIÓN DE VOLCOS</span>
+      <span class="nombre">TALLER ROBLEDO</span>
     </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="volcos.html">Volcos</a></li>
-        <li><a href="cotizacion.html">Cotización</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="opiniones.html">Opiniones</a></li>
-        <li><a href="registro.html">Registro</a></li>
-      </ul>
-    </nav>
-  </header>
+  </div>
 
-  <main class="contenedor-balanceado">
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="volcos.html">Volcos</a></li>
+      <li><a href="cotizacion.html">Cotización</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="opiniones.html">Opiniones</a></li>
+      <li><a href="registro.html" id="linkRegistro">Registro</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- Columna izquierda: contenido original -->
-    <section class="hero hero-columna">
-      <h1 class="titulo-principal">TALLER ROBLEDO</h1>
+<main class="contenedor-balanceado">
 
-      <p class="descripcion">
-        Somos una empresa con 20 años de trayectoria, comprometida con la calidad y el servicio.  
-        Somos especialistas en elaboración, reparación y adaptación de volcos.  
-        Ofrecemos diagnósticos precisos y un estándar de calidad que superan las exigencias del sector transporte y construcción.
-      </p>
+  <!-- Columna izquierda -->
+  <section class="hero hero-columna">
 
-      <div class="logo-centro">
-        <img src="Logotipo.jpg" alt="Logotipo Taller Robledo">
-      </div>
-    </section>
+    <h1 class="titulo-principal">TALLER ROBLEDO</h1>
 
-    <!-- Columna derecha: formulario de inicio de sesión -->
-    <section class="login-contenedor">
-      <h2>Iniciar Sesión</h2>
-      <form action="#" method="POST" class="form-login">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
+    <p class="descripcion">
+      Somos una empresa con 20 años de trayectoria, comprometida con la calidad y el servicio.
+      Somos especialistas en elaboración, reparación y adaptación de volcos.
+      Ofrecemos diagnósticos precisos y un estándar de calidad que superan las exigencias del sector transporte y construcción.
+    </p>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit" class="btn-login">Ingresar</button>
-      </form>
-      <p class="texto-registro">
-  ¿No tienes una cuenta?
-<a href="registro.html">Regístrate aquí</a>
-</p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer-left">
-      <p>Taller Robledo | 📞 314 880 5733</p>
+    <div class="logo-centro">
+      <img src="Logotipo.jpg" alt="Logotipo Taller Robledo">
     </div>
-    <div class="footer-right">
-      <p>&copy; 2025 Todos los derechos reservados</p>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+  </section>
+
+  <!-- Columna derecha: LOGIN -->
+  <section class="login-contenedor">
+
+    <h2>Iniciar Sesión</h2>
+
+    <form class="form-login" id="formLogin">
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" class="btn-login">Ingresar</button>
+
+    </form>
+
+    <p class="texto-registro">
+      ¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a>
+    </p>
+
+    <p id="mensajeBienvenida" style="display:none; font-weight:bold; color:green; margin-top:10px;"></p>
+
+    <button id="btnLogout" style="display:none; margin-top:10px;" class="btn-logout">
+      Cerrar sesión
+    </button>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-left">
+    <p>Taller Robledo | 📞 314 880 5733</p>
+  </div>
+  <div class="footer-right">
+    <p>&copy; 2025 Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
